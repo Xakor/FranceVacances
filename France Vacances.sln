@@ -9,12 +9,9 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "France Vacances.Shared", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "France Vacances.Windows", "France Vacances\France Vacances.Windows\France Vacances.Windows.csproj", "{60A85340-1E53-46BE-A174-9D67C7B4B02C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "France Vacances.WindowsPhone", "France Vacances\France Vacances.WindowsPhone\France Vacances.WindowsPhone.csproj", "{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}"
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		France Vacances\France Vacances.Shared\France Vacances.Shared.projitems*{60a85340-1e53-46be-a174-9d67c7b4b02c}*SharedItemsImports = 4
-		France Vacances\France Vacances.Shared\France Vacances.Shared.projitems*{a88efd8b-0702-41e4-a0cc-a6b71d035f8c}*SharedItemsImports = 4
 		France Vacances\France Vacances.Shared\France Vacances.Shared.projitems*{196043d7-9809-4208-8d9a-97a902c39508}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,30 +49,6 @@ Global
 		{60A85340-1E53-46BE-A174-9D67C7B4B02C}.Release|x86.ActiveCfg = Release|x86
 		{60A85340-1E53-46BE-A174-9D67C7B4B02C}.Release|x86.Build.0 = Release|x86
 		{60A85340-1E53-46BE-A174-9D67C7B4B02C}.Release|x86.Deploy.0 = Release|x86
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|ARM.ActiveCfg = Debug|ARM
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|ARM.Build.0 = Debug|ARM
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|ARM.Deploy.0 = Debug|ARM
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|x64.Build.0 = Debug|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|x64.Deploy.0 = Debug|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|x86.ActiveCfg = Debug|x86
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|x86.Build.0 = Debug|x86
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Debug|x86.Deploy.0 = Debug|x86
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|ARM.ActiveCfg = Release|ARM
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|ARM.Build.0 = Release|ARM
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|ARM.Deploy.0 = Release|ARM
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|x64.ActiveCfg = Release|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|x64.Build.0 = Release|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|x64.Deploy.0 = Release|Any CPU
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|x86.ActiveCfg = Release|x86
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|x86.Build.0 = Release|x86
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +56,5 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{196043D7-9809-4208-8D9A-97A902C39508} = {429E9CB9-9A9B-4734-9C4B-8CD26C84F249}
 		{60A85340-1E53-46BE-A174-9D67C7B4B02C} = {429E9CB9-9A9B-4734-9C4B-8CD26C84F249}
-		{A88EFD8B-0702-41E4-A0CC-A6B71D035F8C} = {429E9CB9-9A9B-4734-9C4B-8CD26C84F249}
 	EndGlobalSection
 EndGlobal

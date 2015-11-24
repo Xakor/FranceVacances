@@ -102,5 +102,10 @@ namespace France_Vacances.View
         }
 
         #endregion
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
     }
 }

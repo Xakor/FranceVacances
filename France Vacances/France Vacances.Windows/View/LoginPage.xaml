@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Name="pageRoot"
+    x:Name="UserLoginPage"
     x:Class="France_Vacances.View.LoginPage"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -8,7 +8,8 @@
     xmlns:common="using:France_Vacances.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Background="Black">
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
@@ -20,7 +21,15 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:/Assets/france_faded.png" Stretch="Fill" Opacity="0.4"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="473"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
@@ -32,7 +41,7 @@
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid>
+        <Grid Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
@@ -42,21 +51,21 @@
                         VerticalAlignment="Top"
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/>
+                        AutomationProperties.ItemType="Navigation Button" Click="backButton_Click"/>
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
-        <StackPanel HorizontalAlignment="Left" Height="461" Margin="436,70,0,0" Grid.Row="1" VerticalAlignment="Top" Width="421">
-            <Image x:Name="image" Height="100" Source="ms-appx:///Assets/SplashScreen.png" Margin="20,0"/>
+        <StackPanel HorizontalAlignment="Center" Height="461" Margin="0" Grid.Row="1" VerticalAlignment="Center" Width="421" Grid.Column="1" Background="#7F000000">
+            <Image x:Name="image" Height="100" Source="ms-appx:///Assets/SplashScreen.png" Margin="20,20,20,0"/>
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Email" Margin="20,20,20,0" FontSize="16"/>
-            <TextBox x:Name="textBox" TextWrapping="Wrap" Text="" PlaceholderText="Example@mail.com" Height="40" FontSize="18.667" FontFamily="Global User Interface" Margin="20,0"/>
+            <TextBox x:Name="TxtBox_Email" TextWrapping="Wrap" Text="" PlaceholderText="Example@mail.com" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="20,0" Padding="10"/>
             <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Password" Margin="20,20,20,0" FontSize="16"/>
-            <PasswordBox x:Name="passwordBox" PlaceholderText="Password" Height="40" FontSize="18.667" FontFamily="Global User Interface" Margin="20,0"/>
+            <PasswordBox x:Name="TxtBox_Password" PlaceholderText="Password" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="20,0" Padding="10"/>
             <StackPanel Height="60" Margin="20,40,20,0" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="button" Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Width="150" Margin="0,0,20,0"/>
-                <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="150" Height="60"/>
+                <Button x:Name="Btn_login" Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Width="150" Margin="0,0,20,0" Background="#99000000"/>
+                <Button x:Name="Btn_cancel" Content="Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="150" Height="60" Background="#99000000"/>
             </StackPanel>
-            <HyperlinkButton Content="Forgot your password?" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,20,0,0"/>
+            <HyperlinkButton x:Name="Btn_FgtPass" Content="Forgot your password?" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,20"/>
         </StackPanel>
     </Grid>
 </Page>

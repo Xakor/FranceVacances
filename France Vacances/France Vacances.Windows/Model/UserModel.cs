@@ -8,12 +8,12 @@ namespace France_Vacances.Model
 {
     class UserModel
     {
-        private string _id;
+        private int _id;
         private string _email;
         private string _password;
         private string _formatDateTime;
 
-        public string Id
+        public int Id
         {
             get { return _id; }
             set { _id = value; }
@@ -38,14 +38,14 @@ namespace France_Vacances.Model
         }
         public UserModel()
         {
-            _id = "0";
+            _id = 0;
             _email = "myemail@email.com";
             _password = "123abc";
             _formatDateTime = DateTime.Now.ToString("f");
 
         }
 
-        public UserModel(string id, string email, string password)
+        public UserModel(int id, string email, string password)
         {
             this._id = id;
             this._email = email;
