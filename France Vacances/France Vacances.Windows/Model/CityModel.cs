@@ -57,12 +57,12 @@ namespace France_Vacances.Model
         {
             return new[]
             {
-                new CityModel("Paris", 400, "The Capitol of France", "../assets/france_faded.png"),
-                new CityModel("Nice", 450, "something, something", "../assets/france_faded.png"),
-                new CityModel("Montpillier", 350, "Ubisoft have their headquarter there", "../assets/france_faded.png"),
-                new CityModel("Le Mans", 370, "Wroom wroom, boom boom", "../assets/france_faded.png"),
-                new CityModel("Carcassonne", 290, "Castles and board games", "../assets/france_faded.png"),
-                new CityModel("Versailles", 450, "You know you like it", "../assets/france_faded.png"),
+                new CityModel("Paris", 400, "The Capitol of France", "../assets/City_splash/paris_splash.jpg"),
+                new CityModel("Nice", 450, "something, something", "../assets/City_splash/nice_splash.jpg"),
+                new CityModel("Montpeillier", 350, "Ubisoft have their headquarter there", "../assets/City_splash/montpeiller_splash.jpg"),
+                new CityModel("Marseilles", 370, "We Surrender!", "../assets/City_splash/marseilles_splash.jpeg"),
+                new CityModel("Carcassonne", 290, "Castles and board games", "../assets/City_splash/carcassonne_splash.jpg"),
+                new CityModel("Versailles", 450, "You know you like it", "../assets/City_splash/versialles_splash.jpg"),
             };
         }
     }

@@ -7,9 +7,15 @@
     xmlns:ViewModel="using:France_Vacances.ViewModel"
     x:Name="frontpage"
     x:Class="France_Vacances.MainPage"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Background="Black"
+    >
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid ScrollViewer.HorizontalScrollBarVisibility="Visible">
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:/Assets/france_faded.png" Stretch="Fill" Opacity="0.4"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="3*"/>
@@ -22,9 +28,9 @@
         <Grid.DataContext>
             <ViewModel:MainPageViewModel/>
         </Grid.DataContext>
-        
+
         <!-- Listview -->
-        <ListView x:Name="listView1" Grid.Column="0" Margin="24,20,0,0" Grid.Row="1" ItemsSource="{Binding CitiesCollection, Mode=TwoWay}" IsSynchronizedWithCurrentItem="False" SelectedItem="{Binding SelectedCity, Mode=TwoWay}" FontSize="26.667"/>
+        <ListView x:Name="listView1" Grid.Column="0" Margin="24,20,0,0" Grid.Row="1" ItemsSource="{Binding CitiesCollection, Mode=TwoWay}" IsSynchronizedWithCurrentItem="False" SelectedItem="{Binding SelectedCity, Mode=TwoWay}" FontSize="29.333"/>
 
         <!-- USER SECTION GRID -->
         <Grid Grid.Column="1" HorizontalAlignment="Right" Height="100" Margin="0,0,40,40" Grid.Row="1" VerticalAlignment="Bottom" Width="309" Background="#19FFFFFF">
@@ -41,7 +47,7 @@
                 <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="UserModelUsername" FontSize="18.667"/>
             </StackPanel>
         </Grid>
-        <Button x:Name="button1" Content="Temp Login Button" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,40,150" Grid.Row="1" Click="button1_Click">
+        <Button x:Name="button1" Content="Temp Login Button" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,363,44" Grid.Row="1" Click="button1_Click">
             <Button.ContentTransitions>
                 <TransitionCollection>
                     <ContentThemeTransition/>
@@ -49,8 +55,21 @@
             </Button.ContentTransitions>
         </Button>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="France Vacances" VerticalAlignment="Center" FontSize="48"/>
-        
-        <TextBlock x:Name="textBlock3" Grid.Column="1" HorizontalAlignment="Left" Margin="394,25,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SelectedCity.CityName, Mode=TwoWay}" VerticalAlignment="Top" Height="39" Width="179"/>
-        <TextBlock x:Name="textBlock4" Grid.Column="1" HorizontalAlignment="Left" Margin="395,56,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SelectedCity.BasePrice, Mode=TwoWay}" VerticalAlignment="Top" Height="24" Width="131"/>
+
+
+        <Grid Margin="23,23,-520,205" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="520"/>
+                <ColumnDefinition Width="Auto" MaxWidth="520"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="image1" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="480" Height="360" Source="{Binding SelectedCity.ImgPath, Mode=TwoWay}" Stretch="UniformToFill"/>
+            <StackPanel Grid.Column="1" Margin="5,0">
+                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="{Binding SelectedCity.CityName, Mode=TwoWay}" FontSize="32" Margin="20,20,20,0"/>
+                <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="{Binding SelectedCity.Tagline}" Margin="20,0" FontSize="21.333"/>
+            </StackPanel>
+            <Image x:Name="image1_Copy" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="480" Height="360" Source="{Binding SelectedCity.ImgPath, Mode=TwoWay}" Stretch="UniformToFill" Grid.Column="2"/>
+
+        </Grid>
     </Grid>
 </Page>

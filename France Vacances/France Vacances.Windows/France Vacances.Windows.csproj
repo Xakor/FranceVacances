@@ -131,11 +131,17 @@
     <None Include="France Vacances.Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\City_splash\carcassonne_splash.jpg" />
+    <Content Include="Assets\City_splash\nice_splash.jpg" />
     <Content Include="Assets\france_faded.png" />
     <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\City_splash\marseilles_splash.jpeg" />
+    <Content Include="Assets\City_splash\montpeiller_splash.jpg" />
+    <Content Include="Assets\City_splash\paris_splash.jpg" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\City_splash\versialles_splash.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="View\LoginPage.xaml">
