@@ -8,6 +8,8 @@ namespace France_Vacances.Model
 {
     public class CityModel
     {
+        // Created Frank Branch
+
         // Instance Field
         private string _cityName;
         private double _basePrice;
