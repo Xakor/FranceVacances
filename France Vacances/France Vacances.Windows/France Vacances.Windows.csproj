@@ -115,6 +115,7 @@
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>

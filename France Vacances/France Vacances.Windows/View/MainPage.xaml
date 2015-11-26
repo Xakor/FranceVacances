@@ -1,11 +1,12 @@
 ﻿<Page
-    Name="frontpage"
-    x:Class="France_Vacances.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:France_Vacances"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:France_Vacances.ViewModel"
+    x:Name="frontpage"
+    x:Class="France_Vacances.MainPage"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -18,19 +19,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- SCROOLBAR -->
-        <ScrollViewer Grid.Row="1" Grid.Column="0"  Margin="0">
-            <StackPanel>
-                <Button x:Name="button" Content="Paris" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" FontSize="26.667" Margin="0,0,18,0" FontFamily="Segoe UI"/>
-                <Button x:Name="button2" Content="Versailles" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,18,0" Height="80" FontFamily="Segoe UI" FontSize="26.667"/>
-                <Button x:Name="button3" Content="Marseille" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,18,0" Height="80" FontFamily="Segoe UI" FontSize="26.667"/>
-                <Button x:Name="button4" Content="Nice" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,18,0" Height="80" FontFamily="Segoe UI" FontSize="26.667"/>
-                <Button x:Name="button5" Content="Carcassonne" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,18,0" Height="80" FontFamily="Segoe UI" FontSize="26.667"/>
-                <Button x:Name="button6" Content="Lyon" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,18,0" Height="80" FontFamily="Segoe UI" FontSize="26.667"/>
-                <Button x:Name="button7" Content="Bordeaux" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,18,0" Height="80" FontFamily="Segoe UI" FontSize="26.667"/>
-
-            </StackPanel>
-        </ScrollViewer>
+        <Grid.DataContext>
+            <ViewModel:MainPageViewModel/>
+        </Grid.DataContext>
+        
+        <!-- Listview -->
+        <ListView x:Name="listView1" Grid.Column="0" Margin="24,20,0,0" Grid.Row="1" ItemsSource="{Binding CitiesCollection, Mode=TwoWay}" IsSynchronizedWithCurrentItem="False" SelectedItem="{Binding SelectedCity, Mode=TwoWay}" FontSize="26.667"/>
 
         <!-- USER SECTION GRID -->
         <Grid Grid.Column="1" HorizontalAlignment="Right" Height="100" Margin="0,0,40,40" Grid.Row="1" VerticalAlignment="Bottom" Width="309" Background="#19FFFFFF">
@@ -41,8 +35,8 @@
             <Image x:Name="image" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="80" Grid.Column="1" Margin="10" Source="ms-appx:///Assets/Logo.png"/>
             <StackPanel HorizontalAlignment="Right" Margin="10,10,0,10" VerticalAlignment="Center">
                 <TextBlock x:Name="textBlock" TextWrapping="Wrap" HorizontalAlignment="Right">
-                	<Run Text="Welcome Back"/>
-                	<Run Text=":"/>
+					<Run Text="Welcome Back"/>
+					<Run Text=":"/>
                 </TextBlock>
                 <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="UserModelUsername" FontSize="18.667"/>
             </StackPanel>
@@ -55,5 +49,8 @@
             </Button.ContentTransitions>
         </Button>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="France Vacances" VerticalAlignment="Center" FontSize="48"/>
+        
+        <TextBlock x:Name="textBlock3" Grid.Column="1" HorizontalAlignment="Left" Margin="394,25,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SelectedCity.CityName, Mode=TwoWay}" VerticalAlignment="Top" Height="39" Width="179"/>
+        <TextBlock x:Name="textBlock4" Grid.Column="1" HorizontalAlignment="Left" Margin="395,56,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SelectedCity.BasePrice, Mode=TwoWay}" VerticalAlignment="Top" Height="24" Width="131"/>
     </Grid>
 </Page>
