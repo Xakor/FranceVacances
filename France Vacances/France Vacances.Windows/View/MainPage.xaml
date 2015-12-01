@@ -14,62 +14,61 @@
 
     <Grid ScrollViewer.HorizontalScrollBarVisibility="Visible">
         <Grid.Background>
-            <ImageBrush ImageSource="ms-appx:/Assets/france_faded.png" Stretch="Fill" Opacity="0.4"/>
+            <ImageBrush ImageSource="ms-appx:///Assets/france_faded.png" Stretch="Fill" Opacity="0.4"/>
         </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="3*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="140"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
         <Grid.DataContext>
             <ViewModel:MainPageViewModel/>
         </Grid.DataContext>
 
-        <!-- Listview -->
-        <ListView x:Name="listView1" Grid.Column="0" Margin="24,20,0,0" Grid.Row="1" ItemsSource="{Binding CitiesCollection, Mode=TwoWay}" IsSynchronizedWithCurrentItem="False" SelectedItem="{Binding SelectedCity, Mode=TwoWay}" FontSize="29.333"/>
+        <!-- HUB -->
+        <Hub Header="France Vacances">
+            <HubSection Header="Destinations" Width="780" Background="#CC000000">
+                <DataTemplate>
+                    <Grid Margin="0" Width="700">
+                        <StackPanel>
+                            <ListView ItemsSource="{Binding CitiesCollection, Mode=TwoWay}" FontSize="18.667" SelectedItem="{Binding SelectedCity, Mode=TwoWay}" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+            <HubSection Width="560" Header="{Binding SelectedCity.CityName}">
+                <DataTemplate>
+                    <Grid Width="480" Background="#4C000000">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-        <!-- USER SECTION GRID -->
-        <Grid Grid.Column="1" HorizontalAlignment="Right" Height="100" Margin="0,0,40,40" Grid.Row="1" VerticalAlignment="Bottom" Width="309" Background="#19FFFFFF">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="100"/>
-            </Grid.ColumnDefinitions>
-            <Image x:Name="image" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="80" Grid.Column="1" Margin="10" Source="ms-appx:///Assets/Logo.png"/>
-            <StackPanel HorizontalAlignment="Right" Margin="10,10,0,10" VerticalAlignment="Center">
-                <TextBlock x:Name="textBlock" TextWrapping="Wrap" HorizontalAlignment="Right">
-					<Run Text="Welcome Back"/>
-					<Run Text=":"/>
-                </TextBlock>
-                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="UserModelUsername" FontSize="18.667"/>
-            </StackPanel>
-        </Grid>
-        <Button x:Name="button1" Content="Temp Login Button" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,363,44" Grid.Row="1" Click="button1_Click">
-            <Button.ContentTransitions>
-                <TransitionCollection>
-                    <ContentThemeTransition/>
-                </TransitionCollection>
-            </Button.ContentTransitions>
-        </Button>
-        <TextBlock x:Name="textBlock2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="France Vacances" VerticalAlignment="Center" FontSize="48"/>
+                        <Image x:Name="citySplash" HorizontalAlignment="Left" Height="360" Margin="0,0,0,0" VerticalAlignment="Top" Width="480" Source="{Binding SelectedCity.ImgPath, Mode=TwoWay}" Stretch="UniformToFill" />
+                        <StackPanel Grid.Row="1" Height="200" Orientation="Horizontal" >
+                            <Image x:Name="cityThumb1" Height="150" Width="150"/>
+                            <Image x:Name="cityTHumb2" Height="150" Width="150"/>
+                            <Image x:Name="cityThumb3" Height="150" Width="150"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+            <HubSection Header="{Binding SelectedCity.Tagline}" Width="980">
+                <DataTemplate>
+                    <Grid Background="#4C000000" Width="900">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="360" />
+                            <RowDefinition Height="200" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="bigDesc" />
+                        <TextBlock x:Name="pricesFromTextblock" HorizontalAlignment="Left" Margin="40,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Apartments from:" VerticalAlignment="Center" FontSize="21.333"/>
+                        <TextBlock x:Name="BasePriseTextblock" HorizontalAlignment="Left" Margin="40,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SelectedCity.BasePrice}" VerticalAlignment="Center" FontSize="21.333" Padding="180,0,0,0"/>
+                        <Button x:Name="button" Content="Book an apartment" HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center"/>
+
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
 
 
-        <Grid Margin="23,23,-520,205" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="520"/>
-                <ColumnDefinition Width="Auto" MaxWidth="520"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Image x:Name="image1" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="480" Height="360" Source="{Binding SelectedCity.ImgPath, Mode=TwoWay}" Stretch="UniformToFill"/>
-            <StackPanel Grid.Column="1" Margin="5,0">
-                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="{Binding SelectedCity.CityName, Mode=TwoWay}" FontSize="32" Margin="20,20,20,0"/>
-                <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="{Binding SelectedCity.Tagline}" Margin="20,0" FontSize="21.333"/>
-            </StackPanel>
-            <Image x:Name="image1_Copy" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="480" Height="360" Source="{Binding SelectedCity.ImgPath, Mode=TwoWay}" Stretch="UniformToFill" Grid.Column="2"/>
 
-        </Grid>
     </Grid>
 </Page>
+    
+    
