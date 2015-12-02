@@ -23,9 +23,9 @@
 
         <!-- HUB -->
         <Hub Header="France Vacances">
-            <HubSection Header="Destinations" Width="780" Background="#CC000000">
+            <HubSection Header="Destinations" MaxWidth="780" Background="#CC000000">
                 <DataTemplate>
-                    <Grid Margin="0" Width="700">
+                    <Grid Margin="0" MinWidth="380" MaxWidth="700">
                         <StackPanel>
                             <ListView ItemsSource="{Binding CitiesCollection, Mode=TwoWay}" FontSize="18.667" SelectedItem="{Binding SelectedCity, Mode=TwoWay}" />
                         </StackPanel>
@@ -34,14 +34,16 @@
             </HubSection>
             <HubSection Width="560" Header="{Binding SelectedCity.CityName}">
                 <DataTemplate>
-                    <Grid Width="480" Background="#4C000000">
+                    <Grid Width="480">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="360" />
+                            <RowDefinition Height="100" />
                         </Grid.RowDefinitions>
 
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Canvas.ZIndex="99">
                         <Image x:Name="citySplash" HorizontalAlignment="Left" Height="360" Margin="0,0,0,0" VerticalAlignment="Top" Width="480" Source="{Binding SelectedCity.ImgPath, Mode=TwoWay}" Stretch="UniformToFill" />
-                        <StackPanel Grid.Row="1" Height="200" Orientation="Horizontal" >
+                        </Border>
+                            <StackPanel Grid.Row="1" Height="200" Orientation="Horizontal" >
                             <Image x:Name="cityThumb1" Height="150" Width="150"/>
                             <Image x:Name="cityTHumb2" Height="150" Width="150"/>
                             <Image x:Name="cityThumb3" Height="150" Width="150"/>
@@ -51,12 +53,12 @@
             </HubSection>
             <HubSection Header="{Binding SelectedCity.Tagline}" Width="980">
                 <DataTemplate>
-                    <Grid Background="#4C000000" Width="900">
+                    <Grid Width="900">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="360" />
-                            <RowDefinition Height="200" />
+                            <RowDefinition Height="100" />
                         </Grid.RowDefinitions>
-                        <TextBlock Text="bigDesc" />
+                        <TextBlock Text="{Binding SelectedCity.BigDescription}" FontSize="18.667" />
                         <TextBlock x:Name="pricesFromTextblock" HorizontalAlignment="Left" Margin="40,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Apartments from:" VerticalAlignment="Center" FontSize="21.333"/>
                         <TextBlock x:Name="BasePriseTextblock" HorizontalAlignment="Left" Margin="40,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SelectedCity.BasePrice}" VerticalAlignment="Center" FontSize="21.333" Padding="180,0,0,0"/>
                         <Button x:Name="button" Content="Book an apartment" HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center"/>
@@ -66,7 +68,18 @@
             </HubSection>
         </Hub>
 
+        <Grid Name="grid_UserSection" Width="270" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,40,40" Background="#CC000000">
+            <StackPanel Name="stkpn_NotLoggedin" HorizontalAlignment="Right" Height="100" Margin="0" VerticalAlignment="Top" Width="250" Orientation="Horizontal">
+                <StackPanel Width="150" HorizontalAlignment="Left" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Center">
+                    <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="You're not logged in" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                    <Button x:Name="button" Content="Login"  HorizontalAlignment="Stretch" VerticalAlignment="Center" FontFamily="Global User Interface" Click="button_Click"/>
 
+                </StackPanel>
+                <Image x:Name="image" Width="80" Source="ms-appx:///Assets/StoreLogo.png" Height="80" Margin="10,0,0,0"/>
+            </StackPanel>
+
+        </Grid>
+        
 
     </Grid>
 </Page>

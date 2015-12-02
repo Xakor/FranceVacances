@@ -55,17 +55,20 @@
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
-        <StackPanel HorizontalAlignment="Center" Height="461" Margin="0" Grid.Row="1" VerticalAlignment="Center" Width="421" Grid.Column="1" Background="#7F000000">
-            <Image x:Name="image" Height="100" Source="ms-appx:///Assets/SplashScreen.png" Margin="20,20,20,0"/>
-            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Email" Margin="20,20,20,0" FontSize="16"/>
-            <TextBox x:Name="TxtBox_Email" TextWrapping="Wrap" Text="" PlaceholderText="Example@mail.com" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="20,0" Padding="10"/>
-            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Password" Margin="20,20,20,0" FontSize="16"/>
-            <PasswordBox x:Name="TxtBox_Password" PlaceholderText="Password" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="20,0" Padding="10"/>
+        <StackPanel HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center" Width="420" Grid.Column="1" Background="#7F000000">
+            <Image x:Name="image" Height="100" Source="ms-appx:///Assets/SplashScreen.png" Margin="40,20,40,0"/>
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Email" Margin="40,20,40,0" FontSize="16"/>
+            <TextBox x:Name="TxtBox_Email" TextWrapping="Wrap" Text="" PlaceholderText="Example@mail.com" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="40,0" Padding="10,10,10,15"/>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Password" Margin="40,20,40,0" FontSize="16"/>
+            <PasswordBox x:Name="TxtBox_Password" PlaceholderText="Password" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="40,0,42,0" Padding="10,10,10,15"/>
             <StackPanel Height="60" Margin="20,40,20,0" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="Btn_login" Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Width="150" Margin="0,0,20,0" Background="#99000000"/>
-                <Button x:Name="Btn_cancel" Content="Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="150" Height="60" Background="#99000000"/>
+                <Button x:Name="Btn_login" Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Width="165" Margin="0,0,10,0" Background="#99000000"/>
+                <Button x:Name="Btn_cancel" Content="Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="165" Height="60" Background="#99000000"/>
             </StackPanel>
-            <HyperlinkButton x:Name="Btn_FgtPass" Content="Forgot your password?" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,20"/>
+            <StackPanel Height="60" Margin="20,10,20,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btn_Register" Content="Registrer a new user" Height="60" Width="340" Margin="0" Background="#99000000" HorizontalAlignment="Center"></Button>
+            </StackPanel>
+            <HyperlinkButton x:Name="Btn_FgtPass" Content="Forgot your password?" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,20" FontSize="16"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -27,7 +27,7 @@ namespace France_Vacances
             this.InitializeComponent();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(View.LoginPage));
         }
