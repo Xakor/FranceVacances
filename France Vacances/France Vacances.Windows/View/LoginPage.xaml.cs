@@ -107,5 +107,10 @@ namespace France_Vacances.View
         {
             Frame.Navigate(typeof(MainPage));
         }
+
+        private void Btn_cancel_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (MainPage));
+        }
     }
 }
