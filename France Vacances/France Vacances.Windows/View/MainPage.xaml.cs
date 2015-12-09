@@ -25,11 +25,12 @@ namespace France_Vacances
         public MainPage()
         {
             this.InitializeComponent();
-        }
 
+        }
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(View.LoginPage));
         }
+        
     }
 }

@@ -35,6 +35,10 @@ namespace France_Vacances.ViewModel
         public MainPageViewModel()
         {
             CitiesCollection = new ObservableCollection<CityModel>(CityModel.CityModels());
+            if (CitiesCollection.Count > 0)
+            {
+                
+            }
         }
 
         // inotify interface

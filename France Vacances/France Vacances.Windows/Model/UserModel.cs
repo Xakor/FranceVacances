@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace France_Vacances.Model
 {
-    class UserModel
+    public class UserModel
     {
         private int _id;
+        private string _name;
         private string _email;
         private string _password;
         private string _formatDateTime;
@@ -17,6 +18,12 @@ namespace France_Vacances.Model
         {
             get { return _id; }
             set { _id = value; }
+        }
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
         }
 
         public string Email
@@ -36,20 +43,31 @@ namespace France_Vacances.Model
             get { return _formatDateTime; }
             set { _formatDateTime = value; }
         }
-        public UserModel()
-        {
-            _id = 0;
-            _email = "myemail@email.com";
-            _password = "123abc";
-            _formatDateTime = DateTime.Now.ToString("f");
 
-        }
-
-        public UserModel(int id, string email, string password)
+        //Constructor
+        public UserModel(int id, string name, string email, string password, string formatDateTime)
         {
             this._id = id;
+            this._name = name;
             this._email = email;
             this._password = password;
+            this._formatDateTime = formatDateTime;
         }
+
+        public UserModel()
+        {
+            
+        }
+
+        
+        //public static UserMode UserModels()
+        //{
+        //    return new
+        //    {
+        //        new UserModel(1, "Frank Andersen", "fha.post@gmail.com", "password", DateTime.Now.ToString()),
+        //        new UserModel(2, "Test Person", "test@test.com", "test", DateTime.Now.ToString()),
+        //    };
+        //}
+
     }
 }

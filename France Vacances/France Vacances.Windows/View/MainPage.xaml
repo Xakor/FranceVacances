@@ -23,11 +23,11 @@
 
         <!-- HUB -->
         <Hub Header="France Vacances">
-            <HubSection Header="Destinations" MaxWidth="780" Background="#CC000000">
+            <HubSection Header="Destinations" MaxWidth="780" Background="#CC000000" FontFamily="Global User Interface">
                 <DataTemplate>
                     <Grid Margin="0" MinWidth="380" MaxWidth="700">
                         <StackPanel>
-                            <ListView ItemsSource="{Binding CitiesCollection, Mode=TwoWay}" FontSize="18.667" SelectedItem="{Binding SelectedCity, Mode=TwoWay}" />
+                            <ListView x:Name="CityList" ItemsSource="{Binding CitiesCollection, Mode=TwoWay}" FontSize="18.667" SelectedItem="{Binding SelectedCity, Mode=TwoWay}" DataFetchSize="-8"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

@@ -21,7 +21,7 @@ namespace France_Vacances.View
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class LoginPage : Page
+    public sealed partial class RegPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -45,7 +45,7 @@ namespace France_Vacances.View
         }
 
 
-        public LoginPage()
+        public RegPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -102,20 +102,5 @@ namespace France_Vacances.View
         }
 
         #endregion
-
-        private void backButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
-
-        private void Btn_cancel_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof (MainPage));
-        }
-
-        private void btn_Register_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof (View.RegPage));
-        }
     }
 }
