@@ -4,12 +4,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 using France_Vacances.Common;
 using France_Vacances.Model;
 
 namespace France_Vacances.ViewModel
 {
-    class RegistrationPageViewModel
+    class RegistrationPageViewModel : DefaultViewModel
     {
         public int ID { get; set; }
         public string Name { get; set; }
@@ -39,6 +40,8 @@ namespace France_Vacances.ViewModel
             AddNewUserCollection.Add(new UserModel(ID ,Name,Email,Password,DateTime.Now.ToString()));
 
             Persistancy.PersistancyService.SaveNotesAsJsonAsync(AddNewUserCollection);
+
+            MessageDialogHelper.Show( "Welcome to France Vacances ","User have been Registered");
         }
     }
 }

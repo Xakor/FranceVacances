@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.UI.Popups;
+using France_Vacances.Common;
 using France_Vacances.Model;
 using Newtonsoft.Json;
 
 namespace France_Vacances.Persistancy
 {
-    public class PersistancyService
+    public class PersistancyService : DefaultViewModel
     {
         private static string JsonFileName = "NotesAsJson.dat";
 
@@ -50,16 +51,6 @@ namespace France_Vacances.Persistancy
             {
                 MessageDialogHelper.Show("Loading for the first time? - Try Add and Save some Notes before trying to Save for the first time", "File not Found");
                 return null;
-            }
-        }
-
-
-        private class MessageDialogHelper
-        {
-            public static async void Show(string content, string title)
-            {
-                MessageDialog messageDialog = new MessageDialog(content, title);
-                await messageDialog.ShowAsync();
             }
         }
     }
