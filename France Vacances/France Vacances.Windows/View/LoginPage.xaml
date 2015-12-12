@@ -79,9 +79,9 @@
         <StackPanel HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center" Width="420" Grid.Column="1" Background="#7F000000">
             <Image x:Name="image" Height="100" Source="ms-appx:///Assets/SplashScreen.png" Margin="40,20,40,0"/>
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Email" Margin="40,20,40,0" FontSize="16"/>
-            <TextBox x:Name="TxtBox_Email" TextWrapping="Wrap" Text="{Binding ExistingUser.Email, Mode=TwoWay}" PlaceholderText="Example@mail.com" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="40,0" Padding="10,10,10,15"/>
+            <TextBox x:Name="TxtBox_Email" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay}" PlaceholderText="Example@mail.com" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="40,0" Padding="10,10,10,15"/>
             <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Password" Margin="40,20,40,0" FontSize="16"/>
-            <PasswordBox x:Name="TxtBox_Password" PlaceholderText="Password" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="40,0,42,0" Padding="10,10,10,15" Password="{Binding ExistingUser.Password, Mode=TwoWay}"/>
+            <PasswordBox x:Name="TxtBox_Password" PlaceholderText="Password" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="40,0,42,0" Padding="10,10,10,15" Password="{Binding Password}"/>
             <StackPanel Height="60" Margin="20,40,20,0" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="Btn_login" Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Width="165" Margin="0,0,10,0" Background="#99000000" Command="{Binding LoginCommand}"/>
                 <Button x:Name="Btn_cancel" Content="Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="165" Height="60" Background="#99000000"/>

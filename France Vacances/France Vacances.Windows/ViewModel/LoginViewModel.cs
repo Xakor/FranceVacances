@@ -10,38 +10,43 @@ using Windows.UI.Popups;
 using France_Vacances.Annotations;
 using France_Vacances.Common;
 using France_Vacances.Model;
+using France_Vacances.Persistancy;
 
 namespace France_Vacances.ViewModel
 {
     class LoginViewModel : INotifyPropertyChanged
     {
         // Login Page ViewModel Code
+        public string Email { get; set; }
+        public string Password { get; set; }
+
+        public ObservableCollection<UserModel> UserModels { get; set; } 
+
         public RelayCommand LoginCommand { get; set; }
 
-        private UserModel _existingUser;
-
-        public UserModel  ExistingUser 
+        public LoginViewModel() 
         {
-            get { return _existingUser; }
-            set
+            LoginCommand = new RelayCommand(DoLoginUser);
+        }
+
+        public void DoLoginUser()
+        {
+            var dataList = PersistancyService.LoadNotesFromJsonAsync();
+
+
+
+
+
+            foreach (var UserModel in dataList.Result)
             {
-                _existingUser = value;
-                OnPropertyChanged();
+                if (UserModel.Email == Email && UserModel.Password == Password)
+                {
+                    // Do something when you succesfully log in
+                }
+                // Do something when log in fails
             }
-        } 
-
-        //constructor
-        public LoginViewModel()
-        {
-
         }
-        
-        public void DoLogin()
-        {
-            string loginResult = "æsodjfk";
-
-            
-        }
+         
         
         // INotifyPropertyChanged Interface Integration
         public event PropertyChangedEventHandler PropertyChanged;
