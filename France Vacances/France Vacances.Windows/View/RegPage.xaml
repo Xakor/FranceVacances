@@ -25,7 +25,7 @@
     -->
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="ms-appx:/Assets/france_faded.png" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="ms-appx:/Assets/france_faded.png" Stretch="UniformToFill" Opacity="0.6"/>
         </Grid.Background>
         <Grid.ChildrenTransitions>
             <TransitionCollection>

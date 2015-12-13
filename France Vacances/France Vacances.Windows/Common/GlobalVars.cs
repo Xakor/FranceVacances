@@ -10,11 +10,11 @@ namespace France_Vacances.Common
     {
 
         //Vars related to user logins
-        public bool Global_LoggedInBool = false;
-        public string Global_LoggedInName;
+        public static bool Global_LoggedInBool = false;
+        public static string Global_LoggedInName;
 
         //Vars related to selected elemtns
-        public int Global_SelectedCity;
-        public int Global_selectedApartment;
+        public static int Global_SelectedCity;
+        public static int Global_selectedApartment;
     }
 }
