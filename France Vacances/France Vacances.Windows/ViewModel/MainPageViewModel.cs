@@ -6,12 +6,12 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using France_Vacances.Annotations;
+using France_Vacances.Common;
 using France_Vacances.Model;
 
 namespace France_Vacances.ViewModel
 {
-    public class MainPageViewModel : INotifyPropertyChanged
+    public class MainPageViewModel : DefaultViewModel
     {
         private ObservableCollection<CityModel> _citiesCollection;
         private CityModel _selectedCity;
@@ -35,15 +35,8 @@ namespace France_Vacances.ViewModel
         public MainPageViewModel()
         {
             CitiesCollection = new ObservableCollection<CityModel>(CityModel.CityModels());
-        }
-
-        // inotify interface
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            SelectedCity = CitiesCollection[0];
+            
         }
     }
 }

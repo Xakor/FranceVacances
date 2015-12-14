@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace France_Vacances.Model
 {
 
-    class HouseModel
+    public class HouseModel
     {
         //Instance Field
         private int _aptId;
