@@ -17,21 +17,7 @@
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">Login</x:String>
     </Page.Resources>
-    <Page.BottomAppBar>
-        <CommandBar>
-            <CommandBar.SecondaryCommands>
-                <AppBarButton x:Name="appBarButton" HorizontalAlignment="Stretch" Icon="Back" Label="AppBarButton" VerticalAlignment="Stretch" d:LayoutOverrides="Width, Height">
-                    <Interactivity:Interaction.Behaviors>
-                        <Core:EventTriggerBehavior EventName="Click">
-                            <Core:NavigateToPageAction TargetPage="France_Vacances.MainPage"/>
-                        </Core:EventTriggerBehavior>
-                    </Interactivity:Interaction.Behaviors>
-                </AppBarButton>
-            </CommandBar.SecondaryCommands>
-            <AppBarButton Icon="Accept" Label="AppBarButton"/>
-            <AppBarButton Icon="Cancel" Label="AppBarButton"/>
-        </CommandBar>
-    </Page.BottomAppBar>
+    
 
     <!--
         This grid acts as a root panel for the page that defines two rows:
@@ -81,7 +67,7 @@
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Email" Margin="40,20,40,0" FontSize="16"/>
             <TextBox x:Name="TxtBox_Email" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay}" PlaceholderText="Example@mail.com" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="40,0" Padding="10,10,10,15"/>
             <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Password" Margin="40,20,40,0" FontSize="16"/>
-            <PasswordBox x:Name="TxtBox_Password" PlaceholderText="Password" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="40,0,42,0" Padding="10,10,10,15" Password="{Binding Password}"/>
+            <PasswordBox x:Name="TxtBox_Password" PlaceholderText="Password" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="40,0,42,0" Padding="10,10,10,15" Password="{Binding Password , Mode=TwoWay}"/>
             <StackPanel Height="60" Margin="20,40,20,0" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="Btn_login" Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Width="165" Margin="0,0,10,0" Background="#99000000" Command="{Binding LoginCommand}"/>
                 <Button x:Name="Btn_cancel" Content="Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="165" Height="60" Background="#99000000"/>

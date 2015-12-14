@@ -10,6 +10,7 @@
     mc:Ignorable="d"
     Background="Black"
     >
+    
 
 
     <Grid ScrollViewer.HorizontalScrollBarVisibility="Visible">
@@ -79,7 +80,17 @@
             </StackPanel>
 
         </Grid>
-        
+        <Grid Name="grid_UserSection2" Width="270" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,40,40" Background="#CC000000">
+            <StackPanel Name="stkpn_isLoggedin" HorizontalAlignment="Right" Height="100" Margin="0" VerticalAlignment="Top" Width="250" Orientation="Horizontal">
+                <StackPanel Width="150" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Welcome Back" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                    <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="" FontSize="16" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <Image x:Name="image2" Width="80" Source="ms-appx:///Assets/StoreLogo.png" Height="80" Margin="10,0,0,0"/>
+            </StackPanel>
+
+        </Grid>
+
 
     </Grid>
 </Page>

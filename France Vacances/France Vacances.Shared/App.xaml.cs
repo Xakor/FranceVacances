@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using France_Vacances.Common;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -62,6 +63,11 @@ namespace France_Vacances
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+                DefaultViewModel.NavigationService service = new DefaultViewModel.NavigationService(rootFrame);
+                
+                
+ 
+            rootFrame.Navigate(typeof(MainPage));
 
                 // TODO: change this value to a cache size that is appropriate for your application
                 rootFrame.CacheSize = 1;
@@ -133,5 +139,6 @@ namespace France_Vacances
             // TODO: Save application state and stop any background activity
             deferral.Complete();
         }
+
     }
 }

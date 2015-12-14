@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using France_Vacances.Common;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,6 +26,16 @@ namespace France_Vacances
         public MainPage()
         {
             this.InitializeComponent();
+
+            if (GlobalVars.Global_LoggedInBool == true)
+            {
+                grid_UserSection.Visibility = Visibility.Collapsed;
+                textBlock3.Text = GlobalVars.Global_LoggedInName;
+            }
+            else
+            {
+                grid_UserSection2.Visibility = Visibility.Collapsed;
+            }
 
         }
         private void button_Click(object sender, RoutedEventArgs e)

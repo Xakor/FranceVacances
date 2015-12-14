@@ -11,7 +11,7 @@ namespace France_Vacances.Common
 
         //Vars related to user logins
         public static bool Global_LoggedInBool = false;
-        public static string Global_LoggedInName;
+        public static string Global_LoggedInName = null;
 
         //Vars related to selected elemtns
         public static int Global_SelectedCity;

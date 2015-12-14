@@ -36,14 +36,20 @@ namespace France_Vacances.ViewModel
 
             foreach (var UserModel in dataList.Result)
             {
-                if (UserModel.Email == Email && UserModel.Password == Password)
+                if ((UserModel.Email == Email) && (UserModel.Password == Password))
                 {
-                    // Do something when you succesfully log in
+                    // Do something if login succeeds
                     GlobalVars.Global_LoggedInBool = true;
                     GlobalVars.Global_LoggedInName = UserModel.Name;
+                    MessageDialogHelper.Show("You have been logged in!", "Login Successfull");
+                    break;
+                    NavigationService.
+                }
+                else
+                {
                     
                 }
-                // Do something when log in fails
+            // Do something if login fails
             }
         }
     }
