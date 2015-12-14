@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
-using France_Vacances.Annotations;
 using France_Vacances.Common;
 using France_Vacances.Model;
 using France_Vacances.Persistancy;

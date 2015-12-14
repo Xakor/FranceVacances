@@ -119,15 +119,10 @@
     <Compile Include="Model\HouseModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Persistancy\PersistancyService.cs" />
-    <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Properties\Annotations1.cs" />
     <Compile Include="ViewModel\ApartmentsViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\RegistrationPageViewModel.cs" />
-    <Compile Include="View\ApartmentsPage.xaml.cs">
-      <DependentUpon>ApartmentsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -160,10 +155,6 @@
     <Content Include="Assets\City_splash\versialles_splash.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="View\ApartmentsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
