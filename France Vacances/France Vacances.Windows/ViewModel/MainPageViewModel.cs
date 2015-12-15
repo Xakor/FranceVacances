@@ -37,6 +37,7 @@ namespace France_Vacances.ViewModel
             CitiesCollection = new ObservableCollection<CityModel>(CityModel.CityModels());
             SelectedCity = CitiesCollection[0];
             
+            
         }
     }
 }

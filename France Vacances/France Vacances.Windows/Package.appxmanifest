@@ -1,38 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-
-  <Identity Name="9bfe3357-8231-476c-b6e2-25d409584d6d"
-            Publisher="CN=Frank Andersen"
-            Version="1.0.0.0" />
-
+  <Identity Name="9bfe3357-8231-476c-b6e2-25d409584d6d" Publisher="CN=Frank Andersen" Version="1.0.0.0" />
   <Properties>
     <DisplayName>France Vacances.Windows</DisplayName>
     <PublisherDisplayName>Frank Andersen</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.3.0</OSMinVersion>
     <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
-    <Resource Language="x-generate"/>
+    <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application Id="App"
-        Executable="$targetnametoken$.exe"
-        EntryPoint="France_Vacances.Windows.App">
-        <m2:VisualElements
-            DisplayName="France Vacances.Windows"
-            Square150x150Logo="Assets\Logo.png"
-            Square30x30Logo="Assets\SmallLogo.png"
-            Description="France Vacances.Windows"
-            ForegroundText="light"
-            BackgroundColor="#464646">
-            <m2:SplashScreen Image="Assets\SplashScreen.png" />
-        </m2:VisualElements>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="France_Vacances.Windows.App">
+      <m2:VisualElements DisplayName="France Vacances" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Flights and Vacations in France" ForegroundText="light" BackgroundColor="#7779d6">
+        <m2:DefaultTile ShortName="France Vacances" Square70x70Logo="Assets/fv_small_126x126.png" Square310x310Logo="Assets\Square310x310Logo.png" DefaultSize="square150x150Logo" Wide310x150Logo="Assets\Icons\fv_medium_wide_310x150.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="wide310x150Logo" />
+            <m2:ShowOn Tile="square310x310Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:SplashScreen Image="Assets\Icons\fv_splash.png" BackgroundColor="#7779d6" />
+      </m2:VisualElements>
     </Application>
   </Applications>
   <Capabilities>

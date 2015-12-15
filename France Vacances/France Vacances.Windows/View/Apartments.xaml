@@ -1,18 +1,19 @@
 ﻿<Page
-    x:Name="pageRoot"
-    x:Class="France_Vacances.View.Apartments"
-    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:France_Vacances.View"
     xmlns:common="using:France_Vacances.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:ViewModel="using:France_Vacances.ViewModel"
+    x:Name="pageRoot"
+    x:Class="France_Vacances.View.Apartments"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d" Background="Black">
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">My Application</x:String>
+        <x:String x:Key="AppName">Select an Apartment</x:String>
     </Page.Resources>
 
     <!--
@@ -20,7 +21,10 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="ms-appx:///Assets/france_faded.png" Opacity="0.6"/>
+        </Grid.Background>
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
@@ -37,14 +41,45 @@
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Grid.DataContext>
+                <ViewModel:ApartmentsViewModel/>
+            </Grid.DataContext>
             <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
-                        Style="{StaticResource NavigationBackButtonNormalStyle}"
-                        VerticalAlignment="Top"
-                        AutomationProperties.Name="Back"
-                        AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/>
+				Style="{StaticResource NavigationBackButtonNormalStyle}"
+				VerticalAlignment="Top"
+				AutomationProperties.Name="Back"
+				AutomationProperties.AutomationId="BackButton"
+				AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
+        <Grid x:Name="Apt_Content_Grid" Margin="0" Grid.Row="1">
+            <Grid.DataContext>
+                <ViewModel:ApartmentsViewModel/>
+            </Grid.DataContext>
+
+            
+            
+            <GridView SelectionMode="None" ItemsSource="{Binding ApartmentCollection}" Margin="0,40,0,0" Padding="0,0,0,10" IsItemClickEnabled="True" HorizontalContentAlignment="Left">
+
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="#99000000" Margin="0,0,0,0">
+                          <StackPanel VerticalAlignment="Top">
+                                <Image Width="500" Height="360" Source="{Binding AptImgPath, Mode=TwoWay}" Stretch="UniformToFill"></Image>
+                                <TextBlock Text="{Binding AptAddress}" TextAlignment="Center" FontSize="24" Margin="0,20,0,0"></TextBlock>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20" >
+                                    <TextBlock TextAlignment="Right" FontSize="14" Text="Price per day: " Margin="0,0,5,0" />
+
+                                    <TextBlock TextAlignment="left" FontSize="14" FontWeight="Bold" Text="{Binding AptPrice}"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+
+        </Grid>
+
     </Grid>
 </Page>

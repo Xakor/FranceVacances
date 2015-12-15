@@ -43,7 +43,6 @@ namespace France_Vacances.ViewModel
                     GlobalVars.Global_LoggedInName = UserModel.Name;
                     MessageDialogHelper.Show("You have been logged in!", "Login Successfull");
                     break;
-                    NavigationService.
                 }
                 else
                 {

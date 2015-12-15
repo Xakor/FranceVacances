@@ -10,7 +10,7 @@
     mc:Ignorable="d"
     Background="Black"
     >
-    
+
 
 
     <Grid ScrollViewer.HorizontalScrollBarVisibility="Visible">
@@ -23,16 +23,42 @@
         </Grid.DataContext>
 
         <!-- HUB -->
+        <!-- HUB SECTION 1 -->
         <Hub Header="France Vacances">
-            <HubSection Header="Destinations" MaxWidth="780" Background="#CC000000" FontFamily="Global User Interface">
+            <HubSection Header="Destinations" MaxWidth="780" Background="#CC7779D6">
                 <DataTemplate>
                     <Grid Margin="0" MinWidth="380" MaxWidth="700">
                         <StackPanel>
-                            <ListView x:Name="CityList" ItemsSource="{Binding CitiesCollection, Mode=TwoWay}" FontSize="18.667" SelectedItem="{Binding SelectedCity, Mode=TwoWay}" DataFetchSize="-8"/>
+                            <ListView 
+                                x:Name="CityList"
+                                ItemsSource="{Binding CitiesCollection, Mode=TwoWay}"
+                                SelectedItem="{Binding SelectedCity, Mode=TwoWay}"
+                                DataFetchSize="-8">
+
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Source="{Binding ImgPath}" Width="60" Height="60" Stretch="UniformToFill" />
+                                                <StackPanel>
+                                                    <TextBlock Padding="10,10,10,0" FontFamily="Global User Interface" FontSize="24" Text="{Binding CityName}"></TextBlock>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text="Apartments from: " Margin="10,0,5,10"></TextBlock>
+                                                        <TextBlock Text="{Binding BasePrice}"></TextBlock>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+
+                            </ListView>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
             </HubSection>
+
+            <!-- HUB SECTION 2 -->
             <HubSection Width="560" Header="{Binding SelectedCity.CityName}">
                 <DataTemplate>
                     <Grid Width="480">
@@ -42,9 +68,9 @@
                         </Grid.RowDefinitions>
 
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Canvas.ZIndex="99">
-                        <Image x:Name="citySplash" HorizontalAlignment="Left" Height="360" Margin="0,0,0,0" VerticalAlignment="Top" Width="480" Source="{Binding SelectedCity.ImgPath, Mode=TwoWay}" Stretch="UniformToFill" />
+                            <Image x:Name="citySplash" HorizontalAlignment="Left" Height="360" Margin="0,0,0,0" VerticalAlignment="Top" Width="480" Source="{Binding SelectedCity.ImgPath, Mode=TwoWay}" Stretch="UniformToFill" />
                         </Border>
-                            <StackPanel Grid.Row="1" Height="200" Orientation="Horizontal" >
+                        <StackPanel Grid.Row="1" Height="200" Orientation="Horizontal" >
                             <Image x:Name="cityThumb1" Height="150" Width="150"/>
                             <Image x:Name="cityTHumb2" Height="150" Width="150"/>
                             <Image x:Name="cityThumb3" Height="150" Width="150"/>
@@ -52,6 +78,8 @@
                     </Grid>
                 </DataTemplate>
             </HubSection>
+
+            <!-- HUB SECTION 3 -->
             <HubSection Header="{Binding SelectedCity.Tagline}" Width="900">
                 <DataTemplate>
                     <Grid Width="700">
@@ -59,16 +87,17 @@
                             <RowDefinition Height="360" />
                             <RowDefinition Height="100" />
                         </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding SelectedCity.BigDescription}" FontSize="18.667" TextWrapping="Wrap" />
+                        <TextBlock Text="{Binding SelectedCity.BigDescription}" FontSize="22" TextWrapping="Wrap" />
                         <TextBlock x:Name="pricesFromTextblock" HorizontalAlignment="Left" Margin="40,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Apartments from:" VerticalAlignment="Center" FontSize="21.333"/>
                         <TextBlock x:Name="BasePriseTextblock" HorizontalAlignment="Left" Margin="40,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SelectedCity.BasePrice}" VerticalAlignment="Center" FontSize="21.333" Padding="180,0,0,0"/>
-                        <Button x:Name="button" Content="Book an apartment" HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center"/>
+                        <Button x:Name="button" Content="Book an apartment" HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center" Click="button_Click_1"/>
 
                     </Grid>
                 </DataTemplate>
             </HubSection>
         </Hub>
 
+        <!-- USER SECTIONS // IF YOU "ARE NOT" LOGGED IN -->
         <Grid Name="grid_UserSection" Width="270" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,40,40" Background="#CC000000">
             <StackPanel Name="stkpn_NotLoggedin" HorizontalAlignment="Right" Height="100" Margin="0" VerticalAlignment="Top" Width="250" Orientation="Horizontal">
                 <StackPanel Width="150" HorizontalAlignment="Left" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Center">
@@ -76,25 +105,23 @@
                     <Button x:Name="button" Content="Login"  HorizontalAlignment="Stretch" VerticalAlignment="Center" FontFamily="Global User Interface" Click="button_Click"/>
 
                 </StackPanel>
-                <Image x:Name="image" Width="80" Source="ms-appx:///Assets/StoreLogo.png" Height="80" Margin="10,0,0,0"/>
+                <Image x:Name="image" Width="80" Source="ms-appx:///Assets/fv_small_126x126.png" Height="80" Margin="10,0,0,0"/>
             </StackPanel>
-
         </Grid>
+        
+        <!-- USER SECTIONS // IF YOU "ARE" LOGGED IN -->
         <Grid Name="grid_UserSection2" Width="270" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,40,40" Background="#CC000000">
             <StackPanel Name="stkpn_isLoggedin" HorizontalAlignment="Right" Height="100" Margin="0" VerticalAlignment="Top" Width="250" Orientation="Horizontal">
                 <StackPanel Width="150" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Welcome Back" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,5"/>
                     <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="" FontSize="16" Margin="0,0,0,5" HorizontalAlignment="Center"/>
                 </StackPanel>
-                <Image x:Name="image2" Width="80" Source="ms-appx:///Assets/StoreLogo.png" Height="80" Margin="10,0,0,0"/>
+                <Image x:Name="image2" Width="80" Source="ms-appx:///Assets/fv_small_126x126.png" Height="80" Margin="10,0,0,0"/>
             </StackPanel>
-
         </Grid>
-
-
-    </Grid>
+    </Grid><!--EndMainGrid -->
 </Page>
-    <!-- ThereBeDragons -->
-    <!-- We Surrender! -->
+<!-- ThereBeDragons -->
+<!-- We Surrender! -->
     
     
