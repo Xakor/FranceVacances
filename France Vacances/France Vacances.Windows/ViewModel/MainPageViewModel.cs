@@ -22,7 +22,7 @@ namespace France_Vacances.ViewModel
             set { _citiesCollection = value; }
         }
 
-        public CityModel SelectedCity
+        public  CityModel SelectedCity
         {
             get { return _selectedCity; }
             set
@@ -32,12 +32,14 @@ namespace France_Vacances.ViewModel
             }
         }
 
+        
+
         public MainPageViewModel()
         {
             CitiesCollection = new ObservableCollection<CityModel>(CityModel.CityModels());
             SelectedCity = CitiesCollection[0];
-            
-            
+            GlobalVars.Global_SelectedCity = SelectedCity.CityId;
+
         }
     }
 }

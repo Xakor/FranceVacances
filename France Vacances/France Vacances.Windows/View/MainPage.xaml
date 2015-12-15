@@ -67,7 +67,7 @@
                             <RowDefinition Height="100" />
                         </Grid.RowDefinitions>
 
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Canvas.ZIndex="99">
+                        <Border BorderBrush="#CC7779D6" BorderThickness="1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Canvas.ZIndex="99">
                             <Image x:Name="citySplash" HorizontalAlignment="Left" Height="360" Margin="0,0,0,0" VerticalAlignment="Top" Width="480" Source="{Binding SelectedCity.ImgPath, Mode=TwoWay}" Stretch="UniformToFill" />
                         </Border>
                         <StackPanel Grid.Row="1" Height="200" Orientation="Horizontal" >
@@ -98,7 +98,7 @@
         </Hub>
 
         <!-- USER SECTIONS // IF YOU "ARE NOT" LOGGED IN -->
-        <Grid Name="grid_UserSection" Width="270" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,40,40" Background="#CC000000">
+        <Grid Name="grid_UserSection" Width="270" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,40,40" Background="#CC7779D6">
             <StackPanel Name="stkpn_NotLoggedin" HorizontalAlignment="Right" Height="100" Margin="0" VerticalAlignment="Top" Width="250" Orientation="Horizontal">
                 <StackPanel Width="150" HorizontalAlignment="Left" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Center">
                     <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="You're not logged in" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,5"/>
@@ -110,7 +110,7 @@
         </Grid>
         
         <!-- USER SECTIONS // IF YOU "ARE" LOGGED IN -->
-        <Grid Name="grid_UserSection2" Width="270" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,40,40" Background="#CC000000">
+        <Grid Name="grid_UserSection2" Width="270" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,40,40" Background="#CC7779D6">
             <StackPanel Name="stkpn_isLoggedin" HorizontalAlignment="Right" Height="100" Margin="0" VerticalAlignment="Top" Width="250" Orientation="Horizontal">
                 <StackPanel Width="150" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Welcome Back" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,5"/>

@@ -48,7 +48,6 @@ namespace France_Vacances
         private void button_Click_1(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof (View.Apartments));
-            //GlobalVars.Global_SelectedCity
         }
     }
 }
