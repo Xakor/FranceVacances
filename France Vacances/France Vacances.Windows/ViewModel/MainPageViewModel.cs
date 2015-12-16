@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 using France_Vacances.Common;
 using France_Vacances.Model;
 
@@ -22,6 +23,8 @@ namespace France_Vacances.ViewModel
             set { _citiesCollection = value; }
         }
 
+        public RelayCommand ApartmentCommand { get; set; }
+
         public  CityModel SelectedCity
         {
             get { return _selectedCity; }
@@ -32,14 +35,19 @@ namespace France_Vacances.ViewModel
             }
         }
 
-        
-
         public MainPageViewModel()
         {
             CitiesCollection = new ObservableCollection<CityModel>(CityModel.CityModels());
             SelectedCity = CitiesCollection[0];
-            GlobalVars.Global_SelectedCity = SelectedCity.CityId;
+            GlobalVars.Global_SelectedCity_cityId = SelectedCity.CityId;
 
+            ApartmentCommand = new RelayCommand(DoViewApartments);
+
+        }
+
+        public void DoViewApartments()
+        {
+            GlobalVars.Global_SelectedCity_cityId = SelectedCity.CityId;
         }
     }
 }

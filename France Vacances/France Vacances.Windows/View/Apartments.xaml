@@ -41,9 +41,7 @@
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Grid.DataContext>
-                <ViewModel:ApartmentsViewModel/>
-            </Grid.DataContext>
+            
             <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
 				Style="{StaticResource NavigationBackButtonNormalStyle}"
 				VerticalAlignment="Top"
@@ -58,14 +56,12 @@
                 <ViewModel:ApartmentsViewModel/>
             </Grid.DataContext>
 
-            
-            
-            <GridView SelectionMode="None" ItemsSource="{Binding ApartmentCollection}" Margin="0,40,0,0" Padding="0,0,0,10" IsItemClickEnabled="True" HorizontalContentAlignment="Left">
+            <GridView ItemsSource="{Binding ApartmentCollection}" Margin="0,40,0,0" Padding="0,0,0,10" IsItemClickEnabled="True" HorizontalContentAlignment="Left" ItemClick="GridView_ItemClick" SelectedItem="{Binding SelectedApartment, Mode=TwoWay}">
 
                 <GridView.ItemTemplate>
                     <DataTemplate>
-                        <Border Background="#99000000" Margin="0,0,0,0">
-                          <StackPanel VerticalAlignment="Top">
+                        <Border Background="#CC2E8DEF" Margin="0,0,0,0">
+                            <StackPanel VerticalAlignment="Top">
                                 <Image Width="500" Height="360" Source="{Binding AptImgPath, Mode=TwoWay}" Stretch="UniformToFill"></Image>
                                 <TextBlock Text="{Binding AptAddress}" TextAlignment="Center" FontSize="24" Margin="0,20,0,0"></TextBlock>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20" >
@@ -78,8 +74,16 @@
                     </DataTemplate>
                 </GridView.ItemTemplate>
             </GridView>
-
+            <StackPanel Margin="842,-126,466,656" HorizontalAlignment="Center">
+                <TextBlock Text="DEBUG"></TextBlock>
+                <TextBlock Text="{Binding SelectedApartment.AptAddress}"></TextBlock>
+                <TextBlock Text="{Binding SelectedApartment.AptId}"></TextBlock>
+                <TextBlock Text="{Binding SelectedApartment.AptImgPath}"></TextBlock>
+                <TextBlock Text="{Binding SelectedApartment.AptInCity}"></TextBlock>
+                <TextBlock Text="{Binding SelectedApartment.AptInfo}"></TextBlock>
+                <TextBlock Text="{Binding SelectedApartment.AptPrice}"></TextBlock>
+            </StackPanel>
         </Grid>
-
+        
     </Grid>
 </Page>

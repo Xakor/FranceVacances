@@ -63,7 +63,7 @@
         </Grid>
 
 
-        <StackPanel HorizontalAlignment="Center" Margin="25,51,28,191" VerticalAlignment="Center" Width="420" Grid.Column="1" Background="#7F000000" Grid.Row="1" Height="380">
+        <StackPanel HorizontalAlignment="Center" Margin="25,51,28,191" VerticalAlignment="Center" Width="420" Grid.Column="1" Background="#CC2E8DEF" Grid.Row="1" Height="380">
             <TextBlock Text="Full Name" Margin="40,40,40,0" FontSize="16" />
             <TextBox x:Name="nameBox" HorizontalAlignment="Center" Margin="0,5,0,20" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="Full Name" Width="340" Height="40" Padding="10"/>
             <TextBlock Text="Chosen Password" Margin="40,0" FontSize="16" />

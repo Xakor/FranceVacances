@@ -14,14 +14,14 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-//The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
+// The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace France_Vacances.View
 {
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class Apartments : Page
+    public sealed partial class ApartmentDetail : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -45,7 +45,7 @@ namespace France_Vacances.View
         }
 
 
-        public Apartments()
+        public ApartmentDetail()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -103,9 +103,9 @@ namespace France_Vacances.View
 
         #endregion
 
-        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(View.ApartmentDetail));
+            Frame.Navigate(typeof (View.BookingPage));
         }
     }
 }

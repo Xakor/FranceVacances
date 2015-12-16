@@ -49,7 +49,7 @@ namespace France_Vacances.Persistancy
             }
             catch (FileNotFoundException ex)
             {
-                MessageDialogHelper.Show("Loading for the first time? - Try Add and Save some Notes before trying to Save for the first time", "File not Found");
+                MessageDialogHelper.Show("No users found... \nIf you're running the program for the first time, you should try to register a user!", "File not Found");
                 return null;
             }
         }

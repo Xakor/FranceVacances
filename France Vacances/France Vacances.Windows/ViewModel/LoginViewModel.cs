@@ -44,12 +44,8 @@ namespace France_Vacances.ViewModel
                     MessageDialogHelper.Show("You have been logged in!", "Login Successfull");
                     break;
                 }
-                else
-                {
-                    
-                }
             // Do something if login fails
-            }
+            } 
         }
     }
 }

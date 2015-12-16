@@ -119,12 +119,19 @@
     <Compile Include="Model\HouseModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Persistancy\PersistancyService.cs" />
+    <Compile Include="ViewModel\ApartmentDetailViewModel.cs" />
     <Compile Include="ViewModel\ApartmentsViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\RegistrationPageViewModel.cs" />
+    <Compile Include="View\ApartmentDetail.xaml.cs">
+      <DependentUpon>ApartmentDetail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Apartments.xaml.cs">
       <DependentUpon>Apartments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BookingPage.xaml.cs">
+      <DependentUpon>BookingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -186,7 +193,15 @@
     <Content Include="Assets\StoreLogo.scale-180.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\ApartmentDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Apartments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BookingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

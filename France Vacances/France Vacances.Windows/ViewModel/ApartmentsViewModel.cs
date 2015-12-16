@@ -12,7 +12,7 @@ namespace France_Vacances.ViewModel
     public class ApartmentsViewModel : DefaultViewModel
     {
         private ObservableCollection<HouseModel> _apartmentCollection;
-        private HouseModel _selectedApartment;
+        public HouseModel _selectedApartment;
 
         // Properties
         public ObservableCollection<HouseModel> ApartmentCollection
@@ -21,7 +21,7 @@ namespace France_Vacances.ViewModel
             set { _apartmentCollection = value; }
         }
 
-        public HouseModel SelectedCity
+        public HouseModel SelectedApartment
         {
             get { return _selectedApartment; }
             set

@@ -62,8 +62,8 @@
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
 				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
-        <StackPanel HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center" Width="420" Grid.Column="1" Background="#7F000000">
-            <Image x:Name="image" Height="100" Source="ms-appx:///Assets/SplashScreen.png" Margin="40,20,40,0"/>
+        <StackPanel HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center" Width="420" Grid.Column="1" Background="#CC2E8DEF">
+            <Image x:Name="image" Source="ms-appx:///Assets/fv_small_126x126.png" Margin="40,20,40,0" Width="340" Height="60"/>
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Email" Margin="40,20,40,0" FontSize="16"/>
             <TextBox x:Name="TxtBox_Email" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay}" PlaceholderText="Example@mail.com" Height="50" FontSize="18.667" FontFamily="Global User Interface" Margin="40,0" Padding="10,10,10,15"/>
             <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Password" Margin="40,20,40,0" FontSize="16"/>
@@ -75,7 +75,7 @@
             <StackPanel Height="60" Margin="20,10,20,0" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="btn_Register" Content="Registrer a new user" Command="{Binding }" Height="60" Width="340" Margin="0" Background="#99000000" HorizontalAlignment="Center" Click="btn_Register_Click"/>
             </StackPanel>
-            <HyperlinkButton x:Name="Btn_FgtPass" Content="Forgot your password?" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,20" FontSize="16"/>
+            <HyperlinkButton x:Name="Btn_FgtPass" Content="Forgot your password?" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,20" FontSize="16" Background="{x:Null}"/>
             
         </StackPanel>
     </Grid>
